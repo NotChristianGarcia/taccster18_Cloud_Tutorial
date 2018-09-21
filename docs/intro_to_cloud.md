@@ -284,11 +284,14 @@ We can also add local files to our image using the `ADD` instruction. We can add
 ADD test.txt /root/text.txt
 ```
 
-A complete Dockerfile for the classify_image application is available from the Tutorial gihub repo:
-https://github.com/TACC/CSC2018Institute/blob/master/docker/Dockerfile
+A complete Dockerfile for the classify_image application as well as the necessary scripts and supporting files is available from the Tutorial gihub repo:
+https://github.com/TACC/taccster18_Cloud_Tutorial/tree/master/classifier
+
 
 #### Building the Image
-To build an image from a docker file we use the `docker build` command. We use the `-t` flag to tag the image: that is, give our image a name. We also need to specify the working directory for the buid. We specify the current working directory using a dot (.) character:
+To build an image from a Dockerfile we use the `docker build` command. We use the `-t` flag to tag the image: that is, give our image a name. We also need to specify the working directory for the buid. We specify the current working directory using a dot (.) character:
 ```
 docker build -t classify_image .
 ```
+
+Note that this command requires all the files in the `classifier` directory in the Tutorial github repo (https://github.com/TACC/taccster18_Cloud_Tutorial/tree/master/classifier)
