@@ -6,7 +6,7 @@
 Introduction to Science in the Cloud
 
 ## Instructors: 
-### Joe Stubbs, Mike Packard Charlie Dey, Greg Zynda, Cody Hammock, Julia Looney,
+### Joe Stubbs, Mike Packard, Charlie Dey, Greg Zynda, Cody Hammock, Julia Looney.
 
 ## Links
 * [TACC User Portal](https://portal.tacc.utexas.edu)
