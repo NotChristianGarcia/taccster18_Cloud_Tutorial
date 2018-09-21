@@ -49,7 +49,7 @@ Key concepts:
 1. Navigate to the JetStream Horizon interface: https://tacc.jetstream-cloud.org
 2. Login with your tacc User Name and Password and enter "tacc" for the Domain.
 3. Make sure you see our Training project (TG-TRA170023) in the projects drop down at the top and select it if it is not already selected (check mark):
-<center><img src="../../resources/jetstream_horizon_projects.png" style="height:300px;"></center>
+   <center><img src="../../resources/jetstream_horizon_projects.png" style="height:300px;"></center>
 4. Select Access & Security -> Key Pairs -> Create Key Pair. Give your key a name and click "Create Key Pair". When prompted, download the key file to your local desktop or click the Download link.
 5. Instances -> Launch Instance.
   * Details: Name your instance something like your_name01 and click Next (Don't click launch instance)
