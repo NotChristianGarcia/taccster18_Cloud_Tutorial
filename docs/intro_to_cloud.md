@@ -31,9 +31,9 @@ In this course we will try to exposure you to each of these views.
 ### Cloud service models
 
 Clouds can offer different service models:
-  * Infrastructure-as-a-service (Iaas) - virtual servers, networks, firewalls, etc. (AWS, Azure)
-  * Platform-as-a-service (Paas) - deploy applications without managing virtual servers (Google App Engine, Heroku)
-  * Software-as-a-service (Saas) - Ready to use software application (Gmail, Office365)
+  * Infrastructure-as-a-service (Iaas) - virtual servers, networks, firewalls, etc. (Openstack, Jetstream, AWS, Azure)
+  * Platform-as-a-service (Paas) - deploy applications without managing virtual servers (Agave, Google App Engine, Heroku)
+  * Software-as-a-service (Saas) - Ready to use software application (Jupyterhub, Gmail, Office365)
 
 Also: emerging models such as functioni-as-a-service.
 
