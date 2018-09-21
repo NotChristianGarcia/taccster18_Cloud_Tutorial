@@ -40,7 +40,7 @@ Also: emerging models such as functioni-as-a-service.
 ### Infrastrcture-as-a-service
 
 Key concepts:
-  * Virtual Machines (VMs) - Simulate a physical computer through software.
+  * Virtual Machines (VMs) - Simulate a physical computer through software. 
   * Software defined networking: Routers, networks and subnets - used to connect VMs to other computers.
   * Security groups - firewall rules enabling or disabling network traffic to/from ports on the VMs.
 
