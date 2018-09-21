@@ -44,58 +44,6 @@ Key concepts:
   * Software defined networking: Routers, networks and subnets - used to connect VMs to other computers.
   * Security groups - firewall rules enabling or disabling network traffic to/from ports on the VMs.
 
-### Hands on: Launching a VM on the JetStream cloud
-
-1. Navigate to the JetStream Horizon interface: https://tacc.jetstream-cloud.org
-2. Login with your tacc User Name and Password and enter "tacc" for the Domain.
-3. Make sure you see our Training project (TG-TRA170023) in the projects drop down at the top and select it if it is not already selected (check mark):
-   <center><img src="../resources/jetstream_horizon_projects.png" style="height:300px;"></center>
-4. Select Access & Security -> Key Pairs -> Create Key Pair. Give your key a name and click "Create Key Pair". When prompted, download the key file to your local desktop or click the Download link.
-5. Instances -> Launch Instance.
-  * Details: Name your instance something like your_name01 and click Next (Don't click launch instance)
-  * Source: Click the "No" under "Create New Volume"
-  * Source: Enter "Ubuntu 18.04 Devel and Docker" in the search and click the plus (+) to select that image.
-  * Flavor: Click the plus next to m1.medium
-  * Networks: Choose the TG-TRA170023-subnet by clicking plus.
-  * (Skip Network Ports by clicking next)
-  * Security Groups: Select default security group.
-  * Key Pair: Select the key you just created in step 4.
-  * Click Launch instance.
-6. Once the VM has been spawned, click the arrow at the far right to select "Associate Floating IP" from the available instance actions.
-<center><img src="../resources/jetstream_horizon_instance_actions.png" style="height:300px;"></center>
-7. Select an IP in the drop down (if there is not one, click the plus (+) symbol to allocate one) and click Associate.
-
-
-### Hands on: verifying connectivity to the VM
-
-Use the SSH key and IP address you generated in steps 4 and 7 above, respectively to test connectivity to your new VM.
-
-OSX/Linux:
-
-```
- Open the application 'Terminal'
-  # make sure your key file has the correct permissions:
-  $ chmod 0600 chmod 0600 ~/Downloads/<key_name>.pem
-  # connect to the VM over SSH
-  $ ssh -i ~/Downloads/<key_name>.pem root@<IP address>
-```
-
-Windows:
-
-```
- Open the application 'PuTTY'
-  enter Host Name: <IP address>
-  (click 'Open')
-  (enter "ubuntu" username)
-  (select your key)
-```
-
-If all goes well you should see a command prompt that looks something like:
-
-```
-Last login: Sat Jul 22 17:52:45 2017 from dhcp-146-6-176-22.tacc.utexas.edu
-root@test-jfs1:~$
-```
 
 
 ## Intro to Docker
