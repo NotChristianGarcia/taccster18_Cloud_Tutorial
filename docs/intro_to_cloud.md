@@ -179,8 +179,8 @@ $ docker run -it  -e URL=https://www.dropbox.com/s/80o4vbzrz4eyzp0/mpackard.jpg?
 ```
 
 <img src="https://raw.githubusercontent.com/TACC/taccster18_Cloud_Tutorial/master/classifier/data/dog.jpeg" height="200">
-<img src="https://www.dropbox.com/s/f93aixy0r5f1fz1/jimo.jpeg?raw=1" height="200">
-<img src="https://www.dropbox.com/s/80o4vbzrz4eyzp0/mpackard.jpg?raw=1" height="200">
+<img src="https://www.dropbox.com/s/f93aixy0r5f1fz1/jimo.jpeg?raw=1" height="300">
+<img src="https://www.dropbox.com/s/80o4vbzrz4eyzp0/mpackard.jpg?raw=1" height="300">
 
 ### Additional Remarks on Running Containers
 
