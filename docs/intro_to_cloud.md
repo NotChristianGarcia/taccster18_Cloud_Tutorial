@@ -225,8 +225,11 @@ an environment variable, `$URL`, containing the address to a publicly available 
 For example, we can run our image classifier program on the `dog.jpg` image contained in the github repo for this turotial with:
 
 ```
-$ docker run -it --rm -e URL=https://raw.githubusercontent.com/TACC/taccster18_Cloud_Tutorial/master/classifier/data/dog.jpeg  taccsciapps/classify_image
+$ docker run -it --rm -e URL=https://raw.githubusercontent.com/TACC/taccster18_Cloud_Tutorial/master/classifier/data/dog.jpeg taccsciapps/classify_image
+$ docker run -it  -e URL=https://www.dropbox.com/s/f93aixy0r5f1fz1/jimo.jpeg taccsciapps/classify_image
+$ docker run -it  -e URL=https://www.dropbox.com/s/mt0lj636el65vla/jimo2.jpeg taccsciapps/classify_image
 ```
+
 
 ### Additional Remarks on Running Containers
 
