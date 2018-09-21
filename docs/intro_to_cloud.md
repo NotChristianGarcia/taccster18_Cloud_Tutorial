@@ -9,7 +9,7 @@ This module will be partially interactive. Please follow along on your own compu
 A "cloud" is a computer system that provides users with shared access to on-demand computing resources via the internet.
 
 
-<center><img src="../../resources/cloud.jpg" style="height:300px;"></center>
+<center><img src="../resources/cloud.jpg" style="height:300px;"></center>
 
 
 ### Goals/Benefits
@@ -49,7 +49,7 @@ Key concepts:
 1. Navigate to the JetStream Horizon interface: https://tacc.jetstream-cloud.org
 2. Login with your tacc User Name and Password and enter "tacc" for the Domain.
 3. Make sure you see our Training project (TG-TRA170023) in the projects drop down at the top and select it if it is not already selected (check mark):
-   <center><img src="../../resources/jetstream_horizon_projects.png" style="height:300px;"></center>
+   <center><img src="../resources/jetstream_horizon_projects.png" style="height:300px;"></center>
 4. Select Access & Security -> Key Pairs -> Create Key Pair. Give your key a name and click "Create Key Pair". When prompted, download the key file to your local desktop or click the Download link.
 5. Instances -> Launch Instance.
   * Details: Name your instance something like your_name01 and click Next (Don't click launch instance)
@@ -62,7 +62,7 @@ Key concepts:
   * Key Pair: Select the key you just created in step 4.
   * Click Launch instance.
 6. Once the VM has been spawned, click the arrow at the far right to select "Associate Floating IP" from the available instance actions.
-<center><img src="../../resources/jetstream_horizon_instance_actions.png" style="height:300px;"></center>
+<center><img src="../resources/jetstream_horizon_instance_actions.png" style="height:300px;"></center>
 7. Select an IP in the drop down (if there is not one, click the plus (+) symbol to allocate one) and click Associate.
 
 
@@ -114,21 +114,22 @@ Make sure you can access the docker daemon; you can verify this by checking the 
 ```
 $ docker version
 Client:
- Version:      1.13.1
- API version:  1.26
- Go version:   go1.6.2
- Git commit:   092cba3
- Built:        Thu Nov  2 20:40:23 2017
- OS/Arch:      linux/amd64
+ Version:	17.12.1-ce
+ API version:	1.35
+ Go version:	go1.10.1
+ Git commit:	7390fc6
+ Built:	Wed Apr 18 01:23:11 2018
+ OS/Arch:	linux/amd64
 
 Server:
- Version:      1.13.1
- API version:  1.26 (minimum version 1.12)
- Go version:   go1.6.2
- Git commit:   092cba3
- Built:        Thu Nov  2 20:40:23 2017
- OS/Arch:      linux/amd64
- Experimental: false
+ Engine:
+  Version:	17.12.1-ce
+  API version:	1.35 (minimum version 1.12)
+  Go version:	go1.10.1
+  Git commit:	7390fc6
+  Built:	Wed Feb 28 17:46:05 2018
+  OS/Arch:	linux/amd64
+  Experimental:	false
 
 ```
 
