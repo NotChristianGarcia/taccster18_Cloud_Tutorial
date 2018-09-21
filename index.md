@@ -14,3 +14,4 @@ Introduction to Science in the Cloud
 
 ## Agenda
 
+* [Intro to Cloud Computing](docs/intro_to_cloud.md)
