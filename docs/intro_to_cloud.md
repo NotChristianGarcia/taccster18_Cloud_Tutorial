@@ -226,13 +226,15 @@ For example, we can run our image classifier program on the `dog.jpg` image cont
 
 ```
 $ docker run -it --rm -e URL=https://raw.githubusercontent.com/TACC/taccster18_Cloud_Tutorial/master/classifier/data/dog.jpeg taccsciapps/classify_image
-$ docker run -it  -e URL=https://www.dropbox.com/s/f93aixy0r5f1fz1/jimo.jpeg taccsciapps/classify_image
-$ docker run -it  -e URL=https://www.dropbox.com/s/80o4vbzrz4eyzp0/mpackard.jpg taccsciapps/classify_image
+$ docker run -it  -e URL=https://www.dropbox.com/s/f93aixy0r5f1fz1/jimo.jpeg?raw=1 taccsciapps/classify_image
+$ docker run -it  -e URL=https://www.dropbox.com/s/80o4vbzrz4eyzp0/mpackard.jpg?raw=1 taccsciapps/classify_image
 ```
 
 <center><img src="https://raw.githubusercontent.com/TACC/taccster18_Cloud_Tutorial/master/classifier/data/dog.jpeg" style="height:100px;"></center>
-<center><img src="https://www.dropbox.com/s/f93aixy0r5f1fz1/jimo.jpeg" style="height:100px;"></center>
-<center><img src="https://www.dropbox.com/s/80o4vbzrz4eyzp0/mpackard.jpg" style="height:100px;"></center>
+
+<center><img src="https://www.dropbox.com/s/f93aixy0r5f1fz1/jimo.jpeg?raw=1" style="height:100px;"></center>
+
+<center><img src="https://www.dropbox.com/s/80o4vbzrz4eyzp0/mpackard.jpg?raw=1" style="height:100px;"></center>
 
 ### Additional Remarks on Running Containers
 
