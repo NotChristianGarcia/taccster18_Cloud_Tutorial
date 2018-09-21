@@ -251,3 +251,19 @@ docker build -t classify_image .
 ```
 
 Note that this command requires all the files in the `classifier` directory in the Tutorial github repo (https://github.com/TACC/taccster18_Cloud_Tutorial/tree/master/classifier)
+
+
+## Jupyter
+
+Online notebooks and access to other TACC resources.
+
+(https://jupyter.tacc.cloud)
+
+## Atmosphere (Jetstream Project) 
+
+1-Click access to VMs.
+
+(https://use.jetstream-cloud.org)
+
+
+
