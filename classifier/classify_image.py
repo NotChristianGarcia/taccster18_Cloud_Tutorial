@@ -45,6 +45,9 @@ import numpy as np
 from six.moves import urllib
 import tensorflow as tf
 
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+tf.logging.set_verbosity(tf.logging.ERROR)
+
 FLAGS = None
 
 # pylint: disable=line-too-long
@@ -127,18 +130,22 @@ def create_graph():
     _ = tf.import_graph_def(graph_def, name='')
 
 
-def run_inference_on_image(image):
+def run_inference_on_image(image, bin_flag=False):
   """Runs inference on an image.
 
   Args:
-    image: Image file name.
+    image: Image file name or binary image.
+    bin_flag: Whether or not data entered is binary image.
 
   Returns:
     Nothing
   """
-  if not tf.gfile.Exists(image):
-    tf.logging.fatal('File does not exist %s', image)
-  image_data = tf.gfile.FastGFile(image, 'rb').read()
+  if bin_flag:
+    image_data = image
+  else:
+    if not tf.gfile.Exists(image):
+      tf.logging.fatal('File does not exist %s', image)
+    image_data = tf.gfile.FastGFile(image, 'rb').read()
 
   # Creates graph from saved GraphDef.
   create_graph()
@@ -175,22 +182,37 @@ def maybe_download_and_extract():
   filename = DATA_URL.split('/')[-1]
   filepath = os.path.join(dest_directory, filename)
   if not os.path.exists(filepath):
-    def _progress(count, block_size, total_size):
-      sys.stdout.write('\r>> Downloading %s %.1f%%' % (
-          filename, float(count * block_size) / float(total_size) * 100.0))
-      sys.stdout.flush()
-    filepath, _ = urllib.request.urlretrieve(DATA_URL, filepath, _progress)
-    print()
+#    def _progress(count, block_size, total_size):
+#      sys.stdout.write('\r>> Downloading %s %.1f%%' % (
+#          filename, float(count * block_size) / float(total_size) * 100.0))
+#      sys.stdout.flush()
+    filepath, _ = urllib.request.urlretrieve(DATA_URL, filepath)#,_progress)
+#    print()
     statinfo = os.stat(filepath)
-    print('Successfully downloaded', filename, statinfo.st_size, 'bytes.')
+#    print('Successfully downloaded', filename, statinfo.st_size, 'bytes.')
   tarfile.open(filepath, 'r:gz').extractall(dest_directory)
 
+def binary_get():
+  from agavepy.actors import get_binary_message
+  return get_binary_message()
 
 def main(_):
   maybe_download_and_extract()
-  image = (FLAGS.image_file if FLAGS.image_file else
-           os.path.join(FLAGS.model_dir, 'cropped_panda.jpg'))
-  run_inference_on_image(image)
+  
+  if FLAGS.bin_message:
+    image = binary_get()
+    bin_flag = True
+  elif FLAGS.bin_data:
+    image = FLAGS.bin_data
+    bin_flag = True
+  elif FLAGS.image_file:
+    image = FLAGS.image_file
+    bin_flag = False
+  else:
+    image = os.path.join(FLAGS.model_dir, 'cropped_panda.jpg')
+    bin_flag = False
+
+  run_inference_on_image(image, bin_flag)
 
 
 if __name__ == '__main__':
@@ -222,6 +244,17 @@ if __name__ == '__main__':
       type=int,
       default=5,
       help='Display this many predictions.'
+  )
+  parser.add_argument(
+      '--bin_data',
+      type=str,
+      default='',
+      help='Inputted binary image data.'
+  )
+  parser.add_argument(
+      '--bin_message',
+      action="store_true",
+      help='Use to show that binary data should be read from stream.'
   )
   FLAGS, unparsed = parser.parse_known_args()
   tf.app.run(main=main, argv=[sys.argv[0]] + unparsed)
